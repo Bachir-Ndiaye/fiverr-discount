@@ -16,6 +16,7 @@ class DiscountFixtures extends Fixture
 
            $discount = new Discount();
            $discount->setType(self::DISCOUNT_TYPE[$i]);
+           $this->addReference('promo'.$i, $discount);
 
            $manager->persist($discount);
        }
