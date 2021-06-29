@@ -138,3 +138,48 @@ header nav .box-nav .liste-nav li a {
   background-color: var(--white);
   padding: .8rem;
 }
+
+/*=================
+  footer
+==================*/
+
+.reseaux{
+    
+    display: flex;
+    justify-content:space-around;
+    padding: 0.5rem 0;
+    height:60px;
+    padding-right:7rem;
+    margin-left:920px;
+    margin-top:50px;
+    
+    
+
+}
+.copy{
+  text-align: center;
+   
+    margin: auto;
+    display: inline-block;
+    max-width: 312px;
+    min-width: 240px;
+    padding: 4rem 0;
+
+}
+.reseaux .foot {
+    padding-bottom: .5rem;
+}
+
+.foot{
+  background-color: var(--white);
+ height:0px;
+  
+  
+}
+.foot_logo{
+  height: 40px;
+  margin-left: 1rem;
+  padding-left:11.5rem;
+  
+   
+}
