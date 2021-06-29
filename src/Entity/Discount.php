@@ -29,6 +29,21 @@ class Discount
      */
     private $products;
 
+    /**
+     * @ORM\Column(type="datetime_immutable")
+     */
+    private $discountFrom;
+
+    /**
+     * @ORM\Column(type="datetime_immutable")
+     */
+    private $discountTo;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $discountPrice;
+
     public function __construct()
     {
         $this->products = new ArrayCollection();
@@ -77,6 +92,42 @@ class Discount
                 $product->setDiscountId(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getDiscountFrom(): ?\DateTimeImmutable
+    {
+        return $this->discountFrom;
+    }
+
+    public function setDiscountFrom(\DateTimeImmutable $discountFrom): self
+    {
+        $this->discountFrom = $discountFrom;
+
+        return $this;
+    }
+
+    public function getDiscountTo(): ?\DateTimeImmutable
+    {
+        return $this->discountTo;
+    }
+
+    public function setDiscountTo(\DateTimeImmutable $discountTo): self
+    {
+        $this->discountTo = $discountTo;
+
+        return $this;
+    }
+
+    public function getDiscountPrice(): ?int
+    {
+        return $this->discountPrice;
+    }
+
+    public function setDiscountPrice(int $discountPrice): self
+    {
+        $this->discountPrice = $discountPrice;
 
         return $this;
     }

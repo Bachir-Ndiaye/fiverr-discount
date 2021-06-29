@@ -2,16 +2,27 @@
 	<a href="/"><img class="main-logo" src="{{ asset('assets/img/logo/discount.png') }}" alt="Logo du site fiverr discount"></a>
 	<div class="box-nav">
 		<img src="{{ asset('assets/img/hamburger/menu.svg') }}" alt="hamburger-logo" class="logo-menu">
-		<ul class="liste-nav">
-			<li class="nav-link">
-				<a href="/">Accueil</a>
-			</li>
-			<li class="nav-link">
-				<a href="/#a-propos">Se connecter</a>
-			</li>
-			<li class="nav-link register">
-				<a href="/#competences">S'inscrire</a>
-			</li>
-		</ul>
+		{% if app.user %}
+			<ul class="liste-nav">
+				<li class="nav-link">
+					<a href="/">Accueil</a>
+				</li>
+				<li class="nav-link">
+					<a href="{{ path('profile_index' , {'id': app.user.id }) }}">Espace client</a>
+				</li>
+				<li class="nav-link register">
+					<a href="{{ path('app_logout') }}">Se déconnecter</a>
+				</li>
+			</ul>
+		{% else %}
+			<ul class="liste-nav">
+				<li class="nav-link">
+					<a href="/">Accueil</a>
+				</li>
+				<li class="nav-link register">
+					<a href="{{ path('app_login') }}">Se connecter</a>
+				</li>
+			</ul>
+		{% endif %}
 	</div>
 </nav>

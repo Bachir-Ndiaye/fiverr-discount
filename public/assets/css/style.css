@@ -7,7 +7,6 @@
     --green: green;
 }
 
-
 body{
     font-family: Arial, Helvetica, sans-serif;
   background-color: var(--mint);
@@ -17,7 +16,7 @@ body{
       HEADER
 ==================*/
 .register{
-    border: 2px solid green;
+    border: 2px solid var(--red);
     padding: 1rem 1.5rem;
     border-radius: 5px;
 }
@@ -29,9 +28,8 @@ header nav {
   right: 0;
   left: 0;
   z-index: 2;
-  padding: 0.5rem;
+  padding: 0.6rem;
   justify-content: space-around;
-  margin: 1rem auto;
 }
 header nav .main-logo {
   height: 40px;
@@ -137,4 +135,48 @@ header nav .box-nav .liste-nav li a {
   text-align: center;
   background-color: var(--white);
   padding: .8rem;
+}
+
+.card-ms-little h5{
+  text-align: center;
+  background-color: var(--white);
+  padding: .8rem;
+}
+
+#form{
+  height: 50vh;
+  width: 500px;
+  margin: 25vh auto;
+}
+
+#margin-25{
+  margin-top: 15vh;
+}
+
+#profile h1{
+  text-align: center;
+}
+
+.alert{
+  text-align: center;
+  font-weight: bold;
+}
+
+.promo-btns{
+  display: flex;
+  justify-content: space-between;
+}
+
+.choice-head{
+  text-align: center;
+  color: var(--red);
+  font-weight: bold;
+}
+
+.form-date{
+  margin-left: 80%;
+}
+
+.form-date p{
+  margin: 0 2rem;
 }

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Espace client - Nouveau produit{% endblock %}
+
+{% block body %}
+    <div id="form">
+        <h1>Créer un nouveau produit</h1>
+
+        {{ include('product/_form.html.twig') }}
+
+        <a href="{{ path('profile_product', {'id': app.user.id}) }}">Retour à la liste</a>
+    </div>
+{% endblock %}

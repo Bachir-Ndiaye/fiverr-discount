@@ -1,0 +1,49 @@
+<button type="button" id="promoBtn" class="btn btn-primary mx-auto d-block mt-5 visually-hidden" data-bs-toggle="modal"
+        data-bs-target="#modalConnect">
+    Bootstrap Modal popup
+</button>
+<div class="modal fade" tabindex="-1" id="modalConnect" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <form class="form-login mx-auto w-100" method="post" action="{{ path('discount_index', {'id': product.id}) }}">
+                    <div class="modal-header border-0">
+                        <h1 class="h3 mb-3 font-weight-normal choice-head">Faites votre choix de promotion</h1>
+                        <button type="button" id="promoBtnClose" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                    </div>
+                    <div class="col-4 mt-2">
+                        <div class="col border-start">
+                            <div class="col-6 form-date promo-btns">
+                                <p>
+                                    <label for="start">Date de début</label>
+                                    <input type="date" id="start" name="from">
+								</p>
+                                <p>
+									<label for="start">Date de fin</label>
+                                    <input type="date" id="end" name="to">
+								</p>
+                            </div>
+
+                           <div class="promo-btns">
+							   <button class="btn text-white col-12 my-4 fs-4 py-1" type="submit" name="submit" value="25">
+								   <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+								   <img src="{{ asset('assets/img/promo/promo-25.png') }}">
+							   </button>
+
+							   <button class="btn text-white col-12 my-4 fs-4 py-1" type="submit" name="submit" value="50">
+								   <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+								   <img src="{{ asset('assets/img/promo/promo-50.png') }}">
+							   </button>
+							   <button class="btn text-white col-12 my-4 fs-4 py-1" type="submit" name="submit" value="75">
+								   <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+								   <img src="{{ asset('assets/img/promo/promo-75.png') }}">
+							   </button>
+						   </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
