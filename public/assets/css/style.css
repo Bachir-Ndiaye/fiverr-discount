@@ -111,7 +111,7 @@ header nav .box-nav .liste-nav li a {
 .mostly-searched h3{
   font-weight: bold;
 }
-.card-all-ms, .card-all-ms-6{
+.card-all-ms, .card-all-ms-6,.card-all-ms-5{
   text-align: center;
   padding: .8rem 0;
 }
@@ -137,4 +137,22 @@ header nav .box-nav .liste-nav li a {
   text-align: center;
   background-color: var(--white);
   padding: .8rem;
+}
+ img{
+    width:200px;
+    height:100px;
+    margin-top:50px;
+}
+
+
+.card-ms-brand{
+    display: inline;
+    margin-top: 20px;
+    margin: auto;
+    padding: 10px;
+}
+
+h6{
+    color:#AAA8A8 ;
+    margin-top: 30px;
 }
