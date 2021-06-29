@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{parent()}}
+	-  Accueil
+{% endblock %}
+
+
+{% block body %}
+	<div class="hero">
+		<div class="hero-backgrounds">
+			<div class="hero-hackathon">
+
+			</div>
+		</div>
+	</div>
+
+	<!--Mostly searched-->
+	<div class="mostly-searched">
+		<h3>Les plus recherchés</h3>
+		<div class="card-all-ms">
+			<div class="card-ms">
+				<img src="{{ asset('assets/img/backgrounds/dev.jpg') }}">
+				<h5>Développement web</h5>
+			</div>
+			<div class="card-ms">
+				<img src="{{ asset('assets/img/backgrounds/sport.jpg') }}">
+				<h5>Sport</h5>
+			</div>
+			<div class="card-ms">
+				<img src="{{ asset('assets/img/backgrounds/social-media.jpg') }}">
+				<h5>Réseaux Sociaux</h5>
+			</div>
+			<div class="card-ms">
+				<img src="{{ asset('assets/img/backgrounds/music.jpg') }}">
+				<h5>Musique</h5>
+			</div>
+		</div>
+
+		<div class="card-all-ms-6">
+			<div class="card-ms-little">
+				<img src="{{ asset('assets/img/backgrounds/dev.jpg') }}">
+				<h5>Astrologie</h5>
+			</div>
+			<div class="card-ms-little">
+				<img src="{{ asset('assets/img/backgrounds/dev.jpg') }}">
+				<h5>Design UI/UX</h5>
+			</div>
+			<div class="card-ms-little">
+				<img src="{{ asset('assets/img/backgrounds/dev.jpg') }}">
+				<h5>Relooking</h5>
+			</div>
+			<div class="card-ms-little">
+				<img src="{{ asset('assets/img/backgrounds/dev.jpg') }}">
+				<h5>Marketing</h5>
+			</div>
+			<div class="card-ms-little">
+				<img src="{{ asset('assets/img/backgrounds/dev.jpg') }}">
+				<h5>Gaming</h5>
+			</div>
+			<div class="card-ms-little">
+				<img src="{{ asset('assets/img/backgrounds/dev.jpg') }}">
+				<h5>High Tech</h5>
+			</div>
+		</div>
+
+	</div>
+{% endblock %}

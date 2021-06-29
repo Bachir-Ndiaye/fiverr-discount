@@ -1,0 +1,140 @@
+:root{
+    --grey:#62646a;
+    --mint:#F5F5F5;
+    --red:  red;
+    --black: black;
+    --white: white;
+    --green: green;
+}
+
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--mint);
+}
+
+/*=================
+      HEADER
+==================*/
+.register{
+    border: 2px solid green;
+    padding: 1rem 1.5rem;
+    border-radius: 5px;
+}
+header nav {
+  display: flex;
+  background-color: var(--white);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  padding: 0.5rem;
+  justify-content: space-around;
+  margin: 1rem auto;
+}
+header nav .main-logo {
+  height: 40px;
+  margin-left: 1rem;
+}
+header nav .box-nav .logo-menu {
+  height: 60px;
+  color: var(--white);
+}
+header nav .box-nav .liste-nav.active {
+  height: 50vh;
+  display: block;
+  text-align: center;
+  left: 0;
+  color: var(--white);
+  padding-top: 3rem;
+  transition: 1s;
+  width: 100%;
+}
+header nav .box-nav .liste-nav.active li {
+  padding: 0.5rem;
+}
+header nav .box-nav .liste-nav {
+  list-style-type: none;
+}
+header nav .box-nav .liste-nav li a {
+  text-decoration: none;
+  font-size: large;
+  color: var(--grey);
+  font-weight: bold;
+}
+
+@media screen and (max-width: 1100px) {
+  .logo-menu {
+    display: flex;
+  }
+
+  .liste-nav {
+    position: fixed;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .logo-menu {
+    display: none;
+  }
+
+  .about h1 {
+    font-size: xx-large;
+  }
+
+  .liste-nav {
+    display: inline-flex;
+  }
+  .liste-nav li {
+    padding: 0 0.5rem;
+  }
+  .liste-nav li a {
+    font-size: large !important;
+  }
+}
+
+.box-nav ul{
+    margin-top: 10px !important;
+}
+
+/*=================
+  Mostly Searched
+==================*/
+.mostly-searched{
+  padding-top:20rem;
+  width: 95%;
+  margin:auto;
+}
+.mostly-searched h3{
+  font-weight: bold;
+}
+.card-all-ms, .card-all-ms-6{
+  text-align: center;
+  padding: .8rem 0;
+}
+.card-ms{
+  display: inline-block;
+  max-width: 400px;
+  height: 300px;
+}
+.card-ms img{
+  width: 400px;
+  height: 300px;
+}
+.card-ms-little{
+  display: inline-block;
+  max-width: 265px;
+  height: 200px;
+}
+.card-ms-little img{
+  width: 265px;
+  height: 200px;
+}
+.card-ms h5{
+  text-align: center;
+  background-color: var(--white);
+  padding: .8rem;
+}
