@@ -3,9 +3,7 @@
 {% block title %}Espace client - Mes produits{% endblock %}
 
 {% block body %}
-
-    <h1>Mes produits</h1>
-
+    <h1 class="mb-5">Mes produits</h1>
     <table class="table">
         <thead>
             <tr>
@@ -15,23 +13,35 @@
                 <th>Crée le</th>
                 <th>Mis à jour le</th>
                 <th>Prix (€)</th>
+                <th>En promotion</th>
                 <th>Image</th>
-                <th>actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for product in products %}
+
             <tr>
                 <td>{{ product.id }}</td>
                 <td>{{ product.name }}</td>
                 <td>{{ product.description }}</td>
                 <td>{{ product.createdAt ? product.createdAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ product.updatedAt ? product.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ product.price }}</td>
+                {% if product.discount is not null %}
+                    <td>{{ product.discount.discountPrice }}</td>
+                    <td>
+                        <i class="fa fa-tag"></i>
+                    </td>
+                {% else %}
+                    <td>{{ product.price }}</td>
+                    <td>
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </td>
+                {% endif %}
                 <td>{{ product.image }}</td>
-                <td>
-                    <a href="{{ path('profile_product_show', {'userId': app.user.id, 'productId': product.id}) }}">Détail</a>
-                    <a href="{{ path('profile_product_edit', {'userId': app.user.id, 'productId': product.id}) }}">Modifier</a>
+                <td class="btn-space">
+                    <a href="{{ path('profile_product_show', {'userId': app.user.id, 'productId': product.id}) }}"><i class="fa fa-info" aria-hidden="true"></i></a>
+                    <a href="{{ path('profile_product_edit', {'userId': app.user.id, 'productId': product.id}) }}"><i class="fa fa-edit" aria-hidden="true"></i></a>
                 </td>
             </tr>
         {% else %}
@@ -42,5 +52,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('profile_product_new', {'userId': app.user.id}) }}">Nouveau produit</a>
+    <a class="btn-green" href="{{ path('profile_product_new', {'userId': app.user.id}) }}">Nouveau produit</a>
 {% endblock %}

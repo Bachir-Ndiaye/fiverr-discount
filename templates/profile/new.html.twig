@@ -8,6 +8,7 @@
 
         {{ include('product/_form.html.twig') }}
 
-        <a href="{{ path('profile_product', {'id': app.user.id}) }}">Retour à la liste</a>
+        <a class="back" href="{{ path('profile_product', {'id': app.user.id}) }}"><i class="fa fa-arrow-left" aria-hidden="true"></i>
+            Retour à la liste</a>
     </div>
 {% endblock %}

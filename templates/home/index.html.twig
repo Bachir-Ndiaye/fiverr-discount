@@ -15,6 +15,32 @@
 		</div>
 	</div>
 
+	<!--Display all products-->
+	<div class="all-cards">
+	{% for product in products %}
+			<div class="card-product">
+				{% if product.getDiscount is not null %}
+					<div class="card-ribbon">
+						<span>PROMO FLASH</span>
+					</div>
+				{% endif %}
+				<img src="https://fakeimg.pl/250x150/" alt="">
+				<div class="middle-card">
+					<img src="{{ product.image }}" alt="Avatar image" class="avatar">
+					<div class="level">
+						<a>{{ product.getUser.lastname }}</a>
+						<h6>Vendeur - Niveau {{ product.getUser.level }}</h6>
+					</div>
+				</div>
+				<div class="description">
+					<h6>{{ product.description }}</h6>
+				</div>
+				<p>A PARTIR DE {{ product.price }} €</p>
+			</div>
+	{% endfor %}
+	</div>
+
+
 	<!--Mostly searched-->
 	<div class="mostly-searched">
 		<h3>Les plus recherchés</h3>

@@ -30,12 +30,12 @@ class Discount
     private $products;
 
     /**
-     * @ORM\Column(type="datetime_immutable")
+     * @ORM\Column(type="datetime")
      */
     private $discountFrom;
 
     /**
-     * @ORM\Column(type="datetime_immutable")
+     * @ORM\Column(type="datetime")
      */
     private $discountTo;
 
@@ -96,24 +96,24 @@ class Discount
         return $this;
     }
 
-    public function getDiscountFrom(): ?\DateTimeImmutable
+    public function getDiscountFrom(): ?\DateTime
     {
         return $this->discountFrom;
     }
 
-    public function setDiscountFrom(\DateTimeImmutable $discountFrom): self
+    public function setDiscountFrom(\DateTime $discountFrom): self
     {
         $this->discountFrom = $discountFrom;
 
         return $this;
     }
 
-    public function getDiscountTo(): ?\DateTimeImmutable
+    public function getDiscountTo(): ?\DateTime
     {
         return $this->discountTo;
     }
 
-    public function setDiscountTo(\DateTimeImmutable $discountTo): self
+    public function setDiscountTo(\DateTime $discountTo): self
     {
         $this->discountTo = $discountTo;
 

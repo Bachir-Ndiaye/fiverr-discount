@@ -13,7 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Component\HttpFoundation\Request;
-use DateTimeImmutable;
+use DateTime;
 
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -72,10 +72,12 @@ class ProfileController extends AbstractController
 
             $entityManager = $this->getDoctrine()->getManager();
 
-            $product->setUpdatedAt(new DateTimeImmutable());
+            $product->setUpdatedAt(new DateTime());
 
             $entityManager->flush();
             $entityManager->persist($product);
+
+            $this->addFlash('success', 'Produit modifié avec succès');
 
             return $this->redirectToRoute('profile_product',[
                 'id' => $user->getId()
@@ -102,7 +104,7 @@ class ProfileController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
 
             $product->setUser($this->getUser());
-            $product->setCreatedAt(new DateTimeImmutable('now'));
+            $product->setCreatedAt(new DateTime('now'));
             //$product->setUpdatedAt(null);
 
             $entityManager->persist($product);

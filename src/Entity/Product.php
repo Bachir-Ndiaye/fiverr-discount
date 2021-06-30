@@ -28,12 +28,12 @@ class Product
     private $description;
 
     /**
-     * @ORM\Column(type="datetime_immutable")
+     * @ORM\Column(type="datetime")
      */
     private $createdAt;
 
     /**
-     * @ORM\Column(type="datetime_immutable", nullable="true")
+     * @ORM\Column(type="datetime", nullable="true")
      */
     private $updatedAt;
 
@@ -86,24 +86,24 @@ class Product
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeImmutable
+    public function getCreatedAt(): ?\DateTime
     {
         return $this->createdAt;
     }
 
-    public function setCreatedAt(\DateTimeImmutable $createdAt): self
+    public function setCreatedAt(\DateTime $createdAt): self
     {
         $this->createdAt = $createdAt;
 
         return $this;
     }
 
-    public function getUpdatedAt(): ?\DateTimeImmutable
+    public function getUpdatedAt(): ?\DateTime
     {
         return $this->updatedAt;
     }
 
-    public function setUpdatedAt(\DateTimeImmutable $updatedAt): self
+    public function setUpdatedAt(\DateTime $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
 
@@ -156,5 +156,14 @@ class Product
         $this->discount = $discount;
 
         return $this;
+    }
+
+    public function isInDiscount(Product $product): int
+    {
+        if($product->getDiscount() !== null){
+            return $product->getDiscount()->getDiscountPrice();
+        }else{
+            return $product->getPrice();
+        }
     }
 }

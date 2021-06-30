@@ -15,6 +15,7 @@ class HomeController extends AbstractController
      */
     public function index(Request $request, ProductRepository $productRepository): Response
     {
+        //dd($productRepository->findAll());
         return $this->render('home/index.html.twig', [
             'products' => $productRepository->findAll()
         ]);

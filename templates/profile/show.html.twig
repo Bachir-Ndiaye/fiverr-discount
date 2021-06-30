@@ -4,7 +4,7 @@
 
 {% block body %}
     <div id="promoForm">{% include 'component/promo.html.twig' %}</div>
-    <h1>Product</h1>
+    <h1>Produit</h1>
 
     <table class="table">
         <tbody>
@@ -39,11 +39,14 @@
         </tbody>
     </table>
 
-    <a href="{{ path('profile_product', {'id': app.user.id}) }}">Retour à la liste</a>
+    <div class="inline-btn">
 
-    <a href="{{ path('profile_product_edit', {'userId': app.user.id ,'productId': product.id}) }}">Modifier</a>
+        <a class="back" href="{{ path('profile_product', {'id': app.user.id}) }}"><i class="fa fa-arrow-left" aria-hidden="true"></i>Retour à la liste</a>
 
-    <a onClick="popup('promoBtn')">Faire une promo</a>
+        <a class="black" href="{{ path('profile_product_edit', {'userId': app.user.id ,'productId': product.id}) }}">Modifier<i class="fa fa-edit" aria-hidden="true"></i></a>
 
-    {{ include('product/_delete_form.html.twig') }}
+        <a onClick="popup('promoBtn')">Faire une promo <i class="fa fa-tag"></i></a>
+
+        {{ include('product/_delete_form.html.twig') }}
+    </div>
 {% endblock %}
