@@ -15,30 +15,62 @@
 		</div>
 	</div>
 
-	<!--Display all products-->
-	<div class="all-cards">
+   <!--Caroussel-->
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="assets/img/backgrounds/cours.jpg" class="d-block w-100" alt="..." height="500px">
+    </div>
+    <div class="carousel-item">
+      <img src="assets/img/backgrounds/formation.jpg" class="d-block w-100" alt="..." height="500px">
+    </div>
+    <div class="carousel-item">
+      <img src="assets/img/backgrounds/hotel.jpg" class="d-block w-100" alt="..." height="500px">
+    </div>
+	<div class="carousel-item">
+      <img src="assets/img/backgrounds/sportfit.jpg" class="d-block w-100" alt="..." height="500px">
+    </div>
+	<div class="carousel-item">
+      <img src="assets/img/backgrounds/projet.jpg" class="d-block w-100" alt="..." height="500px">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!--Display all products-->
+<div class="all-cards">
 	{% for product in products %}
-			<div class="card-product">
-				{% if product.getDiscount is not null %}
-					<div class="card-ribbon">
-						<span>PROMO FLASH</span>
-					</div>
-				{% endif %}
-				<img src="https://fakeimg.pl/250x150/" alt="">
-				<div class="middle-card">
-					<img src="{{ product.image }}" alt="Avatar image" class="avatar">
-					<div class="level">
-						<a>{{ product.getUser.lastname }}</a>
-						<h6>Vendeur - Niveau {{ product.getUser.level }}</h6>
-					</div>
+		<div class="card-product">
+			{% if product.getDiscount is not null %}
+				<div class="card-ribbon">
+					<span>PROMO FLASH</span>
 				</div>
-				<div class="description">
-					<h6>{{ product.description }}</h6>
+			{% endif %}
+			<img src="https://fakeimg.pl/250x150/" alt="">
+			<div class="middle-card">
+				<img src="{{ product.image }}" alt="Avatar image" class="avatar">
+				<div class="level">
+					<a>{{ product.getUser.lastname }}</a>
+					<h6>Vendeur - Niveau
+						{{ product.getUser.level }}</h6>
 				</div>
-				<p>A PARTIR DE {{ product.price }} €</p>
 			</div>
+			<div class="description">
+				<h6>{{ product.description }}</h6>
+			</div>
+			<p>A PARTIR DE
+				{{ product.price }}
+				€</p>
+		</div>
 	{% endfor %}
-	</div>
+</div>
 
 
 	<!--Mostly searched-->
